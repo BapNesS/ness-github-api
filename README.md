@@ -14,7 +14,7 @@ You should specifiy a `query` and a type of `sort` is optional.
 Install the component using [Bower](http://bower.io/):
 
 ```sh
-$ bower install ness-github-api --save
+$ bower install BapNesS/ness-github-api --save
 ```
 
 Or [download as ZIP](https://github.com/BapNesS/ness-github-api/archive/master.zip).
