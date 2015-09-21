@@ -1,5 +1,16 @@
 <!--
-`ness-github-api` is a Polymer element for GitHub ajax call.
+`ness-github-api` is a Polymer element for GitHub ajax call through the search API.
+
+Example:
+
+    <ness-github-api
+        items="{{items}}"
+        sort="updated"
+        query="user:BapNesS ness">
+    </ness-github-api>
+
+You should specifiy a `query` and a type of `sort` is optional.
+
 -->
 
 <link rel="import" href="../iron-jsonp-library/iron-jsonp-library.html">
@@ -17,11 +28,17 @@
       is: 'ness-github-api',
       properties: {
         query: {
+          /**
+           * Parameters for the GitHub search API.
+           */
           type: String,
           reflectToAttribute: true,
           notify: true
         },
         items: {
+          /**
+           * Datas
+           */
           type: Array,
           readOnly: true,
           value: function() {
@@ -30,6 +47,9 @@
           notify: true
         },
         sort: {
+          /**
+           * Type of sort. Can be "stars", "forks" or "updated".
+           */
           type: String,
           reflectToAttribute: true,
           value: 'stars',
