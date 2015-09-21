@@ -1,0 +1,62 @@
+<!--
+`ness-github-api` is a Polymer element for GitHub ajax call.
+-->
+
+<link rel="import" href="../iron-jsonp-library/iron-jsonp-library.html">
+<dom-module id="ness-github-api">
+  <template>
+    <iron-jsonp-library
+      notify-event="data"
+      on-data="_newData"
+      library-url="[[_requestUrl]]"
+      ></iron-jsonp-library>
+  </template>
+
+  <script>
+    Polymer({
+      is: 'ness-github-api',
+      properties: {
+        query: {
+          type: String,
+          reflectToAttribute: true,
+          notify: true
+        },
+        items: {
+          type: Array,
+          readOnly: true,
+          value: function() {
+            return [];
+          },
+          notify: true
+        },
+        sort: {
+          type: String,
+          reflectToAttribute: true,
+          value: 'stars',
+          notify: true
+        },
+        _requestUrl: {
+          type: String,
+          readOnly: true,
+          computed: '_computeUrl(query, sort)',
+          notify: true
+        }
+      },
+      _computeUrl: function(query, sort) {
+        return "https://api.github.com/search/repositories?q="+encodeURI(query)+"&sort="+sort+"&callback=%%callback%%";
+      },
+      _newData: function(ev) {
+          console.log("ev", ev);
+        this._setItems(ev.detail[0].data.items.map(function(post) {
+          return {
+            name: post.name,
+            http_url: post.html_url,
+            description: post.description,
+            forks_count: post.forks_count,
+            watchers: post.watchers
+          };
+        }));
+      }
+    });
+  </script>
+</dom-module>
