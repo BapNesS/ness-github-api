@@ -1,8 +1,8 @@
 {
   "name": "ness-github-api",
-  "version": "0.1",
+  "version": "0.1.1",
   "description": "Polymer element for GitHub ajax call.",
-  "main": "ness-copyright.html",
+  "main": "ness-github-api.html",
   "private": true,
   "homepage": "https://github.com/BapNesS/ness-github-api",
   "authors": [
