@@ -13,6 +13,12 @@
     "url": "git://github.com/BapNesS/ness-github-api.git"
   },
   "keywords": [
+    "polymer",
+    "web-components",
+    "web-component",
+    "github",
+    "api",
+    "ajax"
   ],
   "license": "MIT",
   "ignore": [
