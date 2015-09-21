@@ -1,6 +1,6 @@
 {
   "name": "ness-github-api",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Polymer element for GitHub ajax call.",
   "main": "ness-github-api.html",
   "private": true,
@@ -30,7 +30,7 @@
   ],
   "dependencies": {
     "iron-jsonp-library": "PolymerElements/iron-jsonp-library#~1.0.3",
-    "polymer": "Polymer/polymer#^1.0.2",
+    "polymer": "Polymer/polymer#^1.0.2"
   },
   "devDependencies": {
     "webcomponentsjs": "webcomponents/webcomponentsjs#~0.7.12"
